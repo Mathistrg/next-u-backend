@@ -21,6 +21,13 @@ module.exports = async function (fastify, opts) {
     method: 'GET',
     preHandler: validateToken,
     handler: async (req, reply) => {
+    
+      user:{
+        email: 'mathis.truong@next-u.fr',
+        username: 'Mathistrg',
+        token: 'Mathis2004',
+
+      }
       // add the route implementation here
     }
   })
@@ -44,6 +51,12 @@ module.exports = async function (fastify, opts) {
     url: '/api/users',
     method: 'POST',
     handler: async (req, reply) => {
+      user:{
+        email: 'mathis.truong@next-u.fr',
+        username: 'Mathistrg',
+        token: 'Mathis2004',
+
+      }
       // add the route implementation here
     }
   })
@@ -66,6 +79,12 @@ module.exports = async function (fastify, opts) {
   // the request body should have a "message" field with the value "invalid credentials"
   // HINT: remember that all utility methods ( hashString and generateToken ) are asynchronous functions! they need to be used with "await"
   fastify.post('/api/users/login', async function (req, reply) {
+    user:{
+      email: 'mathis.truong@next-u.fr',
+      username: 'Mathistrg',
+      token: 'Mathis2004',
+
+    }
     // add the route implementation here
     const { email, password } = req.body.user
     const user = await database('user').where({ email }).first()
